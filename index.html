@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To My Love</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(#ffe0ec, #fff);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background-color: #ff8fa3;
+      color: white;
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    p {
+      font-size: 1.2em;
+    }
+    .countdown {
+      margin: 40px 0;
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #d62839;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+    }
+    .gallery img {
+      width: 250px;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .message {
+      margin: 30px;
+      font-size: 1.3em;
+    }
+    .playlist {
+      margin: 30px;
+    }
+    footer {
+      background-color: #ffd3dd;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>To My Love, [His Name]</h1>
+    <p>Though we're miles apart, my heart is always with you.</p>
+  </header>
+
+  <div class="countdown" id="countdown">
+    Countdown to our next hug: calculating...
+  </div>
+
+  <div class="message">
+    <p>"Every moment apart is a moment closer to our forever."</p>
+    <p>I made this just for you ❤️</p>
+  </div>
+
+  <div class="gallery">
+    <img src="a1a13509-a8ad-4c92-9e94-9e962d5bf7bc.png" alt="Us 1" />
+    <img src="c20939a8-aeab-46b8-8aaf-e19061a25550.png" alt="Us 2" />
+    <img src="ad629c26-6c0c-4c8f-b661-5d2ec24f5ca9.png" alt="Us 3" />
+  </div>
+
+  <div class="playlist">
+    <iframe width="300" height="380" src="https://www.youtube.com/embed/WOAEG62Vidw?autoplay=1&loop=1&playlist=WOAEG62Vidw" 
+    title="YouTube video" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+
+  <footer>
+    Made with 💖 by your [Nickname] | [Today's Date]
+  </footer>
+
+  <script>
+    const targetDate = new Date("2025-07-15T00:00:00");
+    const countdownEl = document.getElementById("countdown");
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+      if (diff <= 0) {
+        countdownEl.innerText = "We're together now! 💕";
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / 1000 / 60) % 60);
+      countdownEl.innerText = `Countdown to our next hug: ${days} days, ${hours} hours, ${minutes} minutes`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+  </script>
+
+</body>
+</html>
